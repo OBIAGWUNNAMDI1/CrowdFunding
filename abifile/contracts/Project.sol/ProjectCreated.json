@@ -1,0 +1,155 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address payable",
+        "name": "Creator",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_projectTitle",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      }
+    ],
+    "name": "CreatorPaid",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "contributor",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "currentTotal",
+        "type": "uint256"
+      }
+    ],
+    "name": "RecieveContribution",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "State",
+    "outputs": [
+      {
+        "internalType": "enum ProjectCreated.ProjectState",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "contributeFunds",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "contributors",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_contributors",
+        "type": "address"
+      }
+    ],
+    "name": "getDetails",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "goalAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "currentRaised",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "contributor",
+            "type": "address"
+          },
+          {
+            "internalType": "uint40",
+            "name": "raisingDeadline",
+            "type": "uint40"
+          }
+        ],
+        "internalType": "struct ProjectCreated.Funding",
+        "name": "funds",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "payout",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "result",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
